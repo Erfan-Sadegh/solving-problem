@@ -18,9 +18,7 @@ function App() {
 
     // convert hour and minute to Date object
     const arrivalTime = new Date(
-      `01/01/2022 ${arrivalHour.toString().padStart(2, '0')}:${arrivalMinute
-        .toString()
-        .padStart(2, '0')}`
+      `01/01/2022 ${arrivalHour}:${arrivalMinute}`
     );
     const exitTime = new Date(`01/01/2022 ${exitHour}:${exitMinute}`);
 
@@ -49,7 +47,7 @@ function App() {
   };
 
   const handleSort = () => {
-    const sortedData = [...employeeData].sort((a, b) => a.arrival - b.arrival);
+    const sortedData = [...employeeData].sort((a, b) => b.duration - a.duration);
     setSortEmployeeData(sortedData);
   };
 
